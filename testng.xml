@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Murali Krishna/IdeaProjects/S_Process_Automation">
+        <classes>
+            <class name="Book.Deletepublisher">
+                <methods><include name="main"/>
+                </methods></class>
+            <class name="Sprocess.Login_Test">
+                <methods><include name="Login"/>
+                </methods></class><class name="Term.Add_New_Term">
+            <methods><include name="main"/></methods>
+        </class>
+        </classes>
+    </test>
+</suite>
