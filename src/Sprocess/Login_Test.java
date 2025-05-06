@@ -1,0 +1,48 @@
+package Sprocess;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import com.google.common.annotations.VisibleForTesting;
+
+
+public class Login_Test 
+{
+	public static WebDriver driver;
+	
+	@Test
+	public static void Login() throws Exception
+	{
+		
+		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+		
+		driver = new ChromeDriver();
+		
+		driver.get("http://tabdev.schoolcom.in/sprocess/#/auth/login");
+		driver.findElement(By.name("email")).sendKeys("superadmin@schoolcom.in");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.name("password")).sendKeys("mysj97ez");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//div[1]/div/div/div/div/nb-layout-column/nb-card/nb-card-body/nb-auth-block/app-login/div/form/div[3]/nb-select/button")).click();
+		driver.findElement(By.id("nb-option-0")).click();
+		
+		//Select drpRole = new Select(driver.findElement(By.name("Role")));
+		//drpRole.selectByVisibleText("Super Admin");
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//div[1]/div/div/div/div/nb-layout-column/nb-card/nb-card-body/nb-auth-block/app-login/div/form/div[5]/button")).click();
+		
+		System.out.println(driver.getTitle()+ " Test Successfuly ");
+		Thread.sleep(5000);
+		
+		driver.quit();
+	}
+
+}
